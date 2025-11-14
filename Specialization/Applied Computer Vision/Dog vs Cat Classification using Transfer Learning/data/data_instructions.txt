@@ -1,0 +1,5 @@
+1. Go to https://www.kaggle.com/competitions/dogs-vs-cats/data
+
+2. Go to 'Data' Section
+
+3. Scroll down and clock on 'Download All'
