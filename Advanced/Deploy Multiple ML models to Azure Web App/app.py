@@ -190,9 +190,3 @@ def predict_car():
 
         # 5. Return result
         return render_template('car.html', prediction_text=result_text)
-
-
-# 4. Run the app
-if __name__ == '__main__':
-    # debug=True allows you to see errors and auto-reloads the server on changes
-    app.run(debug=True)
