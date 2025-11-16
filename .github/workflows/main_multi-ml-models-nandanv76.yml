@@ -73,7 +73,8 @@ jobs:
         with:
           app-name: 'multi-ml-models-nandanv76'
           slot-name: 'Production'
-          package: 'Advanced/Deploy Multiple ML models to Azure Web App/Deploy Multiple ML models to Azure Web App'
+          package: 'Advanced/Deploy Multiple ML models to Azure Web App/'
 
 
           
+
