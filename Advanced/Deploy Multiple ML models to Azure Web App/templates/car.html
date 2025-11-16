@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <style>
+        /* Basic styling for demonstration */
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .container { max-width: 700px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        label { font-weight: bold; }
+        input[type="text"], select { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { grid-column: 2 / 3; background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        h1, h3 { text-align: center; }
+        h3 { color: #5cb85c; } /* Green for a price prediction */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        <p>Enter the car's details to predict its resale value:</p>
+
+        <form action="/predict_car" method="POST">
+
+            <div>
+                <label for="Present_Price">Present Price (in Lakhs):</label>
+                <input type="text" id="Present_Price" name="Present_Price" required>
+            </div>
+
+            <div>
+                <label for="Kms_Driven">Kilometers Driven:</label>
+                <input type="text" id="Kms_Driven" name="Kms_Driven" required>
+            </div>
+
+            <div>
+                <label for="Owner">Number of Previous Owners:</label>
+                <input type="text" id="Owner" name="Owner" placeholder="e.g., 0, 1, 2" required>
+            </div>
+            
+            <div>
+                <label for="Year">Year of Manufacture:</label>
+                <input type="text" id="Year" name="Year" placeholder="e.g., 2014" required>
+            </div>
+
+            <div>
+                <label for="Fuel_Type">Fuel Type:</label>
+                <select id="Fuel_Type" name="Fuel_Type">
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Seller_Type">Seller Type:</label>
+                <select id="Seller_Type" name="Seller_Type">
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Transmission">Transmission Type:</label>
+                <select id="Transmission" name="Transmission">
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Resale Value</button>
+        </form>
+
+        <h3>{{ prediction_text }}</h3>
+
+        <a href="/">Back to Home</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        /* Basic styling for demonstration */
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-group { display: flex; flex-direction: column; }
+        label { font-weight: bold; margin-bottom: 5px; }
+        input[type="text"], select { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { grid-column: 2 / 3; background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        h1, h3 { text-align: center; }
+        h3 { color: #d9534f; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <p>Please enter the patient's details below:</p>
+
+        <form action="/predict_heart" method="POST">
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cp">Chest Pain Type (CP):</label>
+                <select id="cp" name="cp">
+                    <option value="0">Type 0: Typical Angina</option>
+                    <option value="1">Type 1: Atypical Angina</option>
+                    <option value="2">Type 2: Non-Anginal Pain</option>
+                    <option value="3">Type 3: Asymptomatic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="trestbps">Resting Blood Pressure (trestbps):</label>
+                <input type="text" id="trestbps" name="trestbps" required>
+            </div>
+
+            <div class="form-group">
+                <label for="chol">Serum Cholestoral (chol):</label>
+                <input type="text" id="chol" name="chol" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fbs">Fasting Blood Sugar > 120 mg/dl (fbs):</label>
+                <select id="fbs" name="fbs">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="restecg">Resting Electrocardiographic (restecg):</label>
+                <select id="restecg" name="restecg">
+                    <option value="0">Value 0</option>
+                    <option value="1">Value 1</option>
+                    <option value="2">Value 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="thalach">Max Heart Rate Achieved (thalach):</label>
+                <input type="text" id="thalach" name="thalach" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exang">Exercise Induced Angina (exang):</label>
+                <select id="exang" name="exang">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="oldpeak">ST Depression (oldpeak):</label>
+                <input type="text" id="oldpeak" name="oldpeak" required>
+            </div>
+
+            <div class="form-group">
+                <label for="slope">Slope of Peak Exercise ST Segment (slope):</label>
+                <select id="slope" name="slope">
+                    <option value="0">Value 0</option>
+                    <option value="1">Value 1</option>
+                    <option value="2">Value 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ca">Number of Major Vessels (ca):</Flabel>
+                <select id="ca" name="ca">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="thal">Thalassemia (thal):</label>
+                <select id="thal" name="thal">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Heart Disease</button>
+        </form>
+
+        <h3>{{ prediction_text }}</h3>
+
+        <a href="/">Back to Home</a>
+    </div>
+
+</body>
+</html>

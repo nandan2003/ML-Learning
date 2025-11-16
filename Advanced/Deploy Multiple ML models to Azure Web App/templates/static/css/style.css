@@ -1,0 +1,188 @@
+/* === Global Styles === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* A slightly lighter, more modern gray */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    color: #004a99; /* Azure blue for main headings */
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 0;
+}
+
+a {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Header & Navigation (from index.html) === */
+header {
+    background-color: #004a99;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+nav ul li {
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    text-decoration: none;
+}
+
+/* === Main Content Container (Used on ALL pages) === */
+.container {
+    max-width: 800px; /* A bit wider for the complex forms */
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* === Form Styles (Used on all prediction pages) === */
+form {
+    display: grid;
+    /* Default to 2 columns, Parkinson's will override this */
+    grid-template-columns: 1fr 1fr; 
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 5px rgba(0,120,212,0.5);
+}
+
+button[type="submit"] {
+    grid-column: 1 / -1; /* Make the button span all columns */
+    padding: 12px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #005a9e;
+}
+
+/* === Special case for Parkinson's form === */
+/* We can target its container by ID or a class, 
+   but for now let's just make a rule for 4 columns */
+.form-4-col {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.form-4-col label {
+    font-size: 0.9em; /* Make labels smaller to fit */
+}
+
+/* === Result & Links === */
+#result {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.result-positive {
+    color: #d9534f; /* Red */
+    background-color: #fdf7f7;
+    border: 1px solid #d9534f;
+}
+
+.result-negative {
+    color: #5cb85c; /* Green */
+    background-color: #f8fcf8;
+    border: 1px solid #5cb85c;
+}
+
+.result-cost {
+    color: #004a99; /* Blue */
+    background-color: #f7f9fc;
+    border: 1px solid #004a99;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.1em;
+}
