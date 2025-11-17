@@ -101,7 +101,7 @@ To run this application on your local machine, follow these steps:
 
     ```bash
     git clone https://github.com/nandan2003/ML-Learning.git
-    cd Advanced/Deploy Multiple ML models to Azure Web App
+    cd ML-Learning/Advanced/Deploy Multiple ML models to Azure Web App
     ```
 
 2.  **Create and activate a virtual environment:**
