@@ -1,6 +1,6 @@
 # The Great Feline-Canine Sorter! 🐶
 
-Welcome to the ultimate showdown: Dogs vs. Cats! 🐱 This project uses the mighty power of TensorFlow and Transfer Learning (with MobileNetV2) to build a neural network that can tell a pupper from a kitty.
+Welcome to the ultimate showdown: Dogs vs Cats! 🐱 This project uses the mighty power of TensorFlow and Transfer Learning (with MobileNetV2) to build a neural network that can tell a pupper from a kitty.
 
 This notebook demonstrates a complete machine learning workflow: data extraction, preprocessing, model building (using a pre-trained model), training, evaluation, and finally, a predictive system to test your own images.
 
