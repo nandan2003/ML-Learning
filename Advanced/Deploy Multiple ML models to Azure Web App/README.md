@@ -4,6 +4,11 @@ This project is a web application designed to serve multiple machine learning mo
 
 The application is built with a Python and Flask backend, with pre-trained Scikit-learn models, and is deployed on Microsoft Azure.
 
+> **⚠️ Note on Performance:**
+> As this application is hosted on a **free-tier** Azure instance, the server spins down when inactive.
+> * **Cold Start:** Please allow **up to 5 minutes** for the website to load initially while the server wakes up.
+> * **Subsequent Usage:** Once loaded, the application responds quickly.
+
 ## Live Demo
 
 You can access the live, deployed application here:
